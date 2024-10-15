@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+@layer base {
+  :root {
+    /* Light mode variables */
+    --element-clr: 0, 0%, 100%; /* White */
+    --bg-clr: 0, 0%, 98%; /* Very Light Gray */
+    --input-clr: 0, 0%, 52%; /* Dark Gray */
+    --text-clr: 200, 15%, 8%; /* Very Dark Blue */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Dark mode variables */
+      --element-clr: 209, 23%, 22%; /* Dark Blue */
+      --bg-clr: 207, 26%, 17%; /* Very Dark Blue */
+      --input-clr: 209, 23%, 22%; /* Optional: Dark Input Color */
+      --text-clr: 0, 0%, 100%; /* White */
+    }
+  }
+
+  :root[data-theme="dark"] {
+    /* Dark mode variables */
+    --element-clr: 209, 23%, 22%; /* Dark Blue */
+    --bg-clr: 207, 26%, 17%; /* Very Dark Blue */
+    --input-clr: 209, 23%, 22%; /* Optional: Dark Input Color */
+    --text-clr: 0, 0%, 100%; /* White */
+  }
+}
